@@ -19,7 +19,15 @@ height = float(height)
 weight = int(weight)
 
 # insert body mass index formula
-BMI = weight / height
+height = float(height)
+
+# def function is used to introduce a user define function in code
+# here, we craete our own square function
+def square(height):
+    result = height*height
+    return result
+
+BMI = weight / square(height)
 
 # Change date type of BMI from float to string to allow for concatenation on our next line
 # note: float and integers cannot be concatenated unless converted to strings
