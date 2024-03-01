@@ -1,0 +1,184 @@
+#include <iostream>
+using namespace std;
+
+
+int main(){
+	int quant;
+	int choice, pin;
+//	Quantity
+	int Qrooms=0, Qpasta=0, Qburger=0, Qnoodles=0, Qshake=0, Qchicken=0;
+	
+//	Sales
+	int Srooms=0, Spasta=0, Sburger=0, Snoodles=0, Sshake=0, Schicken=0;
+	
+//	Prices
+	int Total_rooms=0, Total_pasta=0, Total_burger=0, Total_noodles=0, Total_shake=0, Total_chicken=0;
+
+// manager's input
+	cout<<"\n\t Quantity of items we have"<<endl;
+	cout<<"\n Rooms avaliable : ";
+	cin>>Qrooms;
+	cout<<"\n Quatity of pasta : ";
+	cin>>Qpasta;
+	cout<<"\n Quatity of burger : ";
+	cin>>Qburger;
+	cout<<"\n Quatity of noodles : ";
+	cin>>Qnoodles;
+	cout<<"\n Quatity of shake : ";
+	cin>>Qshake;
+	cout<<"\n Quatity of chicken-roll : ";
+	cin>>Qchicken;
+	
+//	customer's order
+	m:
+	cout<<"\n\t\t\t Please select from the following given options";
+	cout<<"\n\n1) Rooms";
+	cout<<"\n2) Pasta";
+	cout<<"\n3) Burger";
+	cout<<"\n4) Noodles";
+	cout<<"\n5) Shake";
+	cout<<"\n6) Chicken-roll";
+	cout<<"\n7) Information regarding sales and collecton";
+	cout<<"\n8) Exit";
+	
+	cout<<"\nPlease enter your choice ! ";
+	cin>>choice;
+	
+//	processing stage
+	switch(choice){
+		case 1:
+			cout<<"\n\n Enter the number of rooms you want: ";
+			cin>>quant;
+			if(Qrooms - Srooms >= quant){
+				Srooms=Srooms+quant;
+				Total_rooms = Total_rooms + quant * 1200;
+				cout<<"\n\n\t\t"<<quant<<" room/rooms have been allocated to you!";
+			}else{
+				cout<<"Sorry, we have only "<<Qrooms - Srooms<<" rooms left.";
+			}
+			break;
+		case(2):
+			cout<<"\n\n Enter pasta quantity: ";
+			cin>>quant;
+			if(Qpasta - Spasta >= quant){
+				Spasta=Spasta+quant;
+				Total_pasta = Total_pasta + quant * 20;
+				cout<<"\n\n\t\tYou ordered "<<quant<<" pasta/pastas!";
+			}else{
+				cout<<"Sorry, we have only "<<Qpasta - Spasta<<" pasta left.";
+			}
+			break;
+		case(3):
+			cout<<"\n\n Enter quantity of burger: ";
+			cin>>quant;
+			if(Qburger - Sburger >= quant){
+				Sburger=Sburger+quant;
+				Total_burger = Total_burger + quant * 40;
+				cout<<"\n\n\t\t You ordered"<<quant<<" burger/burgers";
+			}else{
+				cout<<"Sorry, we have only "<<Qburger - Sburger<<" burgers left at the moment.";
+			}
+			break;
+		case(4):
+			cout<<"\n\n Enter quantity of noodles: ";
+			cin>>quant;
+			if(Qnoodles - Snoodles >= quant){
+				Snoodles=Snoodles+quant;
+				Total_noodles = Total_noodles + quant * 40;
+				cout<<"\n\n\t\t You ordered"<<quant<<" noodles";
+			}else{
+				cout<<"Sorry, we have only "<<Qburger - Sburger<<" noodles ready at the moment.";
+			}
+			break;
+		case(5):
+			cout<<"\n\n Enter quantity of shake: ";
+			cin>>quant;
+			if(Qshake - Sshake >= quant){
+				Sshake=Sshake+quant;
+				Total_shake = Total_shake + quant * 45;
+				cout<<"\n\n\t\t You ordered"<<quant<<" shake/shakes";
+			}else{
+				cout<<"Sorry, we have only "<<Qburger - Sburger<<" shakes left at the moment.";
+			}
+			break;
+		case(6):
+			cout<<"\n\n Enter quantity of chicken-rolls: ";
+			cin>>quant;
+			if(Qchicken - Schicken >= quant){
+				Schicken=Schicken+quant;
+				Total_chicken = Total_chicken + quant * 40;
+				cout<<"\n\n\t\t You ordered"<<quant<<" chicken-rolls/chicken-rolls";
+			}else{
+				cout<<"Sorry, we have only "<<Qburger - Sburger<<" chicken-rolls left at the moment.";
+			}
+			break;
+			
+//			Manager's enquiries regarding sales
+		case(7):
+			cout<<"Enter pin : "<<endl;
+			cin>>pin;
+			if(pin == 1029){
+			
+			cout<<"Sales info rooms"<<endl;
+			cout<<"Number of rooms we had : "<<Qrooms<<endl;
+			cout<<"Number of rooms sold : "<<Srooms<<endl;
+			cout<<"Number of rooms left : "<<Qrooms - Srooms<<endl;
+			cout<<"Total money made : "<<Total_rooms<<" GHC"<<endl<<endl;       
+			
+			cout<<"Sales info shake"<<endl;
+			cout<<"Number of shake we had : "<<Qshake<<endl;
+			cout<<"Number of shake sold : "<<Sshake<<endl;
+			cout<<"Number of shake left : "<<Qshake - Sshake<<endl;
+			cout<<"Total money made : "<<Total_shake<<" GHC"<<endl<<endl;     
+			
+			
+			cout<<"Sales info on burger"<<endl;
+			cout<<"Number of burger we had : "<<Qburger<<endl;
+			cout<<"Number of burger sold : "<<Sburger<<endl;
+			cout<<"Number of burger left : "<<Qburger - Sburger<<endl;
+			cout<<"Total money made : "<<Total_burger<<" GHC"<<endl<<endl;     
+			
+			cout<<"Sales info on chicken rolls"<<endl;
+			cout<<"Number of chicken rolls we had : "<<Qchicken<<endl;
+			cout<<"Number of chicken rolls sold : "<<Schicken<<endl;
+			cout<<"Number of chicken rolls left : "<<Qchicken - Schicken<<endl;
+			cout<<"Total money made : "<<Total_chicken<<" GHC"<<endl<<endl;     
+			
+			
+			cout<<"Sales info on noodles"<<endl;
+			cout<<"Number of noodles we had : "<<Qnoodles<<endl;
+			cout<<"Number of noodles sold : "<<Snoodles<<endl;
+			cout<<"Number of noodle left : "<<Qnoodles - Snoodles<<endl;
+			cout<<"Total money made : "<<Total_noodles<<" GHC"<<endl<<endl;     
+			
+			cout<<"Sales info on Pasta"<<endl;
+			cout<<"Number of pasta we had : "<<Qpasta<<endl;
+			cout<<"Number of pasta sold : "<<Spasta<<endl;
+			cout<<"Number of pasta left : "<<Qpasta - Spasta<<endl;
+			cout<<"Total money made : "<<Total_pasta<<" GHC"<<endl<<endl;     
+		}else{
+			
+			cout<<"Wrong PIN ! You cannot access sales info";
+		}
+		case(8):
+			exit(0);
+			
+			default:
+				cout<<"\n Please select the numbers mnentioned above !";
+		
+	}
+	goto m;
+	
+
+
+
+
+
+
+
+
+
+
+
+	return 0;
+}
